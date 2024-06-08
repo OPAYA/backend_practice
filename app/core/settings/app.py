@@ -13,7 +13,7 @@ class AppSettings(BaseAppSettings):
     docs_url: str = "/docs"
     redoc_url: str = "/redoc"
 
-    database_url: str = "postgresql+asyncpg://tsdbadmin:password@localhost:34552/tsdb"
+    database_url: str = "postgresql+asyncpg://gimjuntae:1111@localhost:5432/postgres"
     max_connection_count: int = 10
     db_schema: str = "public"
 
