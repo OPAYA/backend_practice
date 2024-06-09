@@ -46,7 +46,6 @@ def set_engines() -> dict:
         EngineType.READER: engine,
     }
 
-print(get_app_settings().database_url,)
 engines = set_engines()
 
 

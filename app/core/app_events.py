@@ -21,7 +21,7 @@ def create_start_app_handler(
 
 def create_stop_app_handler(app: FastAPI) -> Callable:
     async def stop_app() -> None:
-        session.close_all()
+        await session.close_all()
 
     return stop_app
 

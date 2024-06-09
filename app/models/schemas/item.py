@@ -1,12 +1,11 @@
 from typing import Optional, List
 from pydantic.dataclasses import dataclass
 
-from app.models.domain import ItemDTO
+from app.models.domain.item import ItemDTO
 
 
 @dataclass
 class ItemResp:
-    itemId: int
     name: str
     description: str
     price: float
@@ -15,9 +14,24 @@ class ItemResp:
     @classmethod
     def from_dto(cls, dto: ItemDTO) -> "ItemResp":
         return cls(
-            itemId=dto.item_id,
             name=dto.name,
             description=dto.description,
             price=dto.price,
             quantity=dto.quantity
         )
+
+@dataclass
+class ItemReq:
+    name: str
+    description: str
+    price: float
+    quantity: int
+    
+    def to_dto(self) -> ItemDTO:
+        return ItemDTO(
+            name=self.name,
+            description=self.description,
+            price=self.price,
+            quantity=self.quantity
+        )
+    
