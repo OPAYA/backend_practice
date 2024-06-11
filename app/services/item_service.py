@@ -1,10 +1,11 @@
 from typing import Dict
 
 class ItemService:
-    def __init__(self):
+    def __init__(self, item_repsitory):
+        self.item_repository = item_repsitory
         print('hi')
     
-    async def retrieve_item_info(self, item_id: int) -> Dict:
+    async def retrieve_item_info_by_id(self, item_id: int) -> Dict:
         return {
             "id": "12345",
             "name": "Wireless Mouse",
@@ -40,5 +41,6 @@ class ItemService:
                 "connectivity": "Bluetooth, USB receiver"
             }
         }
-
-
+        
+    async def retrive_item_info_by_name(self, item_name: str) -> dict:
+        return {"item_name": item_name}

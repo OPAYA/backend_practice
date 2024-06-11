@@ -1,6 +1,7 @@
 from dependency_injector import providers, containers
 
 from app.core.config import BaseAppSettings
+
 import app.services as services
 
 
@@ -16,4 +17,12 @@ class Container(containers.DeclarativeContainer):
         ]
     )
     
-    item_service = providers.Factory(services.ItemService)
+    item_service = providers.Factory(
+        services.ItemService,
+    )
+    
+    user_service = providers.Factory(
+        services.UserService
+    )
+    
+    
